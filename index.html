@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Toulouse Effect: A Strategic Surprise War Game</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,100,200,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .tabs { display: flex; flex-wrap: wrap; background: #f0f0f0; border-bottom: 2px solid #ddd; }
+        .tab { flex: 1; padding: 15px; text-align: center; cursor: pointer; border: none; background: none; font-size: 1em; font-weight: 600; font-family: inherit; color: #333; }
+        .tab:hover { background: #e0e0e0; }
+        .tab.active { background: white; color: #3b82f6; border-bottom: 3px solid #3b82f6; }
+        .content { padding: 30px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .danger-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .info-box { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .classified-box { background: #1a1a1a; color: #ff6b6b; border-left: 4px solid #ff0000; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .classified-box strong { color: #ffb3b3; }
+        .role-card { background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 15px 0; }
+        .role-card h3 { color: #3b82f6; margin-top: 0; margin-bottom: 10px; }
+        .decision-point { background: white; border: 2px solid #6c757d; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .decision-point h3 { background: #6c757d; color: white; padding: 10px; margin: -20px -20px 15px -20px; border-radius: 6px 6px 0 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #dee2e6; padding: 8px 10px; text-align: left; vertical-align: top; }
+        th { background: #f0f0f0; }
+        .footer { background: #343a40; color: white; padding: 20px; text-align: center; }
+        h2 { color: #3b82f6; margin: 25px 0 15px 0; padding-bottom: 10px; border-bottom: 2px solid #dee2e6; }
+        h3 { color: #495057; margin: 20px 0 10px 0; }
+        p { margin: 8px 0; }
+        ul, ol { margin-left: 30px; margin-top: 10px; }
+        li { margin: 8px 0; }
+        strong { color: #495057; }
+        .classified-box strong { color: #ffb3b3; }
+        @media (max-width: 640px) {
+            body { padding: 8px; }
+            .content { padding: 18px; }
+            .header h1 { font-size: 1.6em; }
+            .tab { flex: 1 1 33%; padding: 10px; font-size: .9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The Toulouse Effect</h1>
+            <p>A War Game on Strategic Surprise: Europe Has Switched Off Gravity. America Did Not See It Coming.</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="overview">Scenario</button>
+            <button class="tab" data-tab="device">The Device</button>
+            <button class="tab" data-tab="surprise">Surprise 101</button>
+            <button class="tab" data-tab="rooms">Rooms &amp; Roles</button>
+            <button class="tab" data-tab="move1">Move 1</button>
+            <button class="tab" data-tab="move2">Move 2</button>
+            <button class="tab" data-tab="debrief">Debrief</button>
+        </div>
+
+        <div class="content">
+
+            <!-- ===================== SCENARIO ===================== -->
+            <div id="overview" class="tab-content active">
+                <h2>Scenario</h2>
+
+                <div class="danger-box">
+                    <strong>MARCH 14, 2028. TOULOUSE, FRANCE.</strong> Before an audience of European heads of government and live television, a 40-tonne armored vehicle rises silently off the runway, hovers at 300 meters for twenty minutes, drifts sideways across the airfield, and settles back down. There are no rotors, no jets, no wings, and no noise. The European Commission announces that Europe has developed a <strong>practical way to cancel the effect of gravity on a large object</strong>, and that it is already building them.
+                </div>
+
+                <p>The discovery came out of <strong>curiosity-driven basic research</strong>: a European Research Council grant to a physicist in Toulouse studying strange behavior in superconducting materials. When her group saw what they had, the paper was pulled before publication, the work was classified, and the European Defence Fund quietly paid to turn it into hardware. A European consortium called <strong>Aérolys</strong> now runs the production line.</p>
+
+                <p>Washington learned about it the same way you did: on television. U.S. intelligence had noticed the withdrawn paper two years ago and filed it as an academic dispute.</p>
+
+                <p>This is not an enemy. It is <strong>America's closest set of allies</strong>, who spent the last decade arguing with Washington about defense spending and whether America could be relied upon. Some European leaders now say openly that this is what "strategic autonomy" looks like.</p>
+
+                <div class="info-box">
+                    <strong>The whole game in one sentence:</strong> A friend has just made half of your military, and some of your economy, look obsolete. What do you do in the first week, and what do you do when the secret gets out?
+                </div>
+
+                <h3>The Response Card Fits on One Page</h3>
+                <p>Every room fills in the same five boxes. Nothing more.</p>
+                <table>
+                    <tr><th>Box</th><th>What goes in it</th></tr>
+                    <tr><td><strong>1. Assessment</strong></td><td>One sentence: what does this change? Plus one thing you <em>don't</em> know and most need to.</td></tr>
+                    <tr><td><strong>2. Offense</strong></td><td>One action that uses (or prepares to use) anti-gravity to project power.</td></tr>
+                    <tr><td><strong>3. Defense</strong></td><td>One action that protects you against someone else's anti-gravity.</td></tr>
+                    <tr><td><strong>4. Economics</strong></td><td>One action about money, industry, or markets.</td></tr>
+                    <tr><td><strong>5. The Ask &amp; The Red Line</strong></td><td>One thing you want from another room. One thing you will not do, whatever happens.</td></tr>
+                </table>
+
+                <h3>Schedule (60 minutes)</h3>
+                <table>
+                    <tr><th>Time</th><th>Activity</th></tr>
+                    <tr><td>0:00 – 0:10</td><td>Briefing: the scenario, the device, and strategic surprise (whole class)</td></tr>
+                    <tr><td>0:10 – 0:27</td><td><strong>Move 1:</strong> The First Week (breakout rooms, 17 min)</td></tr>
+                    <tr><td>0:27 – 0:35</td><td>Report-out 1: each Reporter reads the card (2 min per room). Instructor rules on the Asks.</td></tr>
+                    <tr><td>0:35 – 0:47</td><td><strong>Move 2:</strong> Day 90, The Secret Gets Out (breakout rooms, 12 min)</td></tr>
+                    <tr><td>0:47 – 0:53</td><td>Report-out 2: Keep, Bend, or Break? (2 min per room)</td></tr>
+                    <tr><td>0:53 – 1:00</td><td>Debrief (whole class)</td></tr>
+                </table>
+
+                <div class="warning-box">
+                    <strong>Ground rules.</strong> No dice, no points, no scoring. The physics is fictional; the institutions are real. Do not argue about whether anti-gravity is possible. It works, and that is the premise. The instructor decides what happens next based on what you write and how well you defend it.
+                </div>
+            </div>
+
+            <!-- ===================== THE DEVICE ===================== -->
+            <div id="device" class="tab-content">
+                <h2>The Device: What We Know and What We Don't</h2>
+
+                <p>This is everything the U.S. government knows on Day 3. Everyone gets the same sheet.</p>
+
+                <h3>What We Know</h3>
+                <table>
+                    <tr><th>Fact</th><th>Detail</th></tr>
+                    <tr><td><strong>What it does</strong></td><td>A ring-shaped "Lift Module" cancels most of the weight of whatever it is attached to. With weight gone, small fans or thrusters can move very heavy objects slowly and silently.</td></tr>
+                    <tr><td><strong>Size of the lift</strong></td><td>Demonstrated: 40 tonnes to 300 meters. A separate test lifted a 2-tonne satellite mock-up to 30 km altitude at walking speed.</td></tr>
+                    <tr><td><strong>Power</strong></td><td>Modest. A truck-sized battery pack keeps a module running for hours.</td></tr>
+                    <tr><td><strong>Cost</strong></td><td>About €2 million per module today. Aérolys says that will fall by 90% within five years.</td></tr>
+                    <tr><td><strong>Production</strong></td><td>About 12 modules a month from one plant. Europe says 500 by the end of 2029.</td></tr>
+                    <tr><td><strong>Who controls it</strong></td><td>The designs are classified under EU and national secrecy rules. A key superconducting material is made at only one facility.</td></tr>
+                </table>
+
+                <h3>What We Don't Know</h3>
+                <ul>
+                    <li><strong>How it works.</strong> Nothing has been published. U.S. physicists disagree about whether it can be replicated without the secret material.</li>
+                    <li><strong>Whether it scales.</strong> Could it lift an aircraft carrier? A city block? Nobody outside Europe knows.</li>
+                    <li><strong>Whether it can be detected or stopped.</strong> It makes no heat and no noise. Radar can see the vehicle but not the module.</li>
+                    <li><strong>What Europe intends.</strong> Sell it? Share it with NATO? Keep it?</li>
+                </ul>
+
+                <h3>Why It Matters in All Three Domains</h3>
+                <table>
+                    <tr><th>Domain</th><th>The obvious implications</th></tr>
+                    <tr><td><strong>Offense</strong></td><td>Heavy armor, troops, and supplies can be delivered anywhere without runways, ports, or roads. Getting to orbit becomes cheap, so placing weapons and sensors in space becomes cheap too.</td></tr>
+                    <tr><td><strong>Defense</strong></td><td>Sensor and interceptor platforms could hover in place for weeks. But airfields, carriers, and missile defenses were all designed for a world where heavy things have to fly fast or roll on the ground.</td></tr>
+                    <tr><td><strong>Economics</strong></td><td>Rocket launch, air freight, heavy-lift helicopters, and parts of the aviation industry could be worth much less. American launch and aerospace companies are among the most exposed in the world. On Day 1, their stock prices fell sharply.</td></tr>
+                </table>
+
+                <div class="info-box">
+                    <strong>Keep in mind:</strong> The scariest implications are not always the military ones. A technology that cuts the cost of moving heavy things can reorder whole industries before it ever fires a shot.
+                </div>
+            </div>
+
+            <!-- ===================== SURPRISE 101 ===================== -->
+            <div id="surprise" class="tab-content">
+                <h2>Strategic Surprise 101</h2>
+
+                <p>A <strong>strategic surprise</strong> is an event that forces a country to rethink its basic assumptions about security, and that its institutions failed to anticipate. Technological surprise is a special case: someone else can suddenly do something you thought was impossible, or years away.</p>
+
+                <h3>Four Real Surprises</h3>
+                <table>
+                    <tr><th>Surprise</th><th>What happened</th><th>What America did</th></tr>
+                    <tr><td><strong>The Soviet bomb</strong> (August 1949)</td><td>The USSR tested an atomic bomb years earlier than most U.S. estimates had predicted, helped by espionage.</td><td>Pushed ahead with the hydrogen bomb and a large military buildup.</td></tr>
+                    <tr><td><strong>Sputnik</strong> (October 1957)</td><td>The USSR put the first satellite in orbit. Americans could see it, and hear its radio beep, passing overhead.</td><td>Created ARPA (now DARPA) and NASA in 1958, and passed the National Defense Education Act to train scientists and engineers. Much of the Miracle Machine's postwar growth traces to this moment.</td></tr>
+                    <tr><td><strong>Chinese hypersonic test</strong> (2021)</td><td>China tested a nuclear-capable hypersonic glide vehicle that circled the globe. The Chairman of the Joint Chiefs called it very close to a "Sputnik moment."</td><td>Accelerated U.S. hypersonic programs, which had been lagging.</td></tr>
+                    <tr><td><strong>DeepSeek</strong> (January 2025)</td><td>A Chinese company released an AI model rivaling the best American ones at a fraction of the reported cost. Investors called it AI's "Sputnik moment."</td><td>U.S. tech stocks lost hundreds of billions of dollars in market value in a single day, and Washington debated export controls on AI chips.</td></tr>
+                </table>
+
+                <h3>Why Surprises Happen</h3>
+                <ul>
+                    <li><strong>Signals and noise.</strong> In her classic study of Pearl Harbor (1962), Roberta Wohlstetter showed that the warnings were there. They were buried among many other signals, and nobody had a reason to put them together. The withdrawn Toulouse paper is a signal of exactly this kind.</li>
+                    <li><strong>Failure of imagination.</strong> Analysts look hardest for the threats they already expect, from the countries they already worry about. Nobody was watching European physics labs for weapons.</li>
+                    <li><strong>Mirror-imaging.</strong> Assuming the other side thinks like you do. America assumed allies would tell it about anything this big.</li>
+                </ul>
+
+                <div class="danger-box">
+                    <strong>The twist in this game:</strong> Every surprise in the table came from an <strong>adversary</strong>. This one comes from an <strong>ally</strong>. You cannot respond to France the way you responded to the Soviet Union. Or can you?
+                </div>
+
+                <div class="info-box">
+                    <strong>The Miracle Machine connection:</strong> The breakthrough came from an unplanned basic-research grant, the very model Vannevar Bush argued for in 1945. Europe beat America at America's own game. And the Toulouse lead scientist did her postdoc at a U.S. national lab before her funding ran out and she went home.
+                </div>
+            </div>
+
+            <!-- ===================== ROOMS ===================== -->
+            <div id="rooms" class="tab-content">
+                <h2>Rooms &amp; Roles</h2>
+
+                <p>There are three breakout rooms. Every room fills in the same Response Card. What differs is <strong>who you are</strong>, which decides what "offense," "defense," and "economics" mean for you.</p>
+
+                <div class="role-card">
+                    <h3>Room A: Washington, the National Security Council</h3>
+                    <p><strong>Who you are:</strong> The President's senior national-security team.</p>
+                    <p><strong>Your power:</strong> The world's largest military, the intelligence community, and the ability to put pressure on Europe through NATO, trade, and diplomacy.</p>
+                    <p><strong>Your weakness:</strong> Your force structure, a trillion dollars of planned aircraft, ships, and missile defenses, was designed for a world with gravity. And you were just caught completely flat-footed by your friends.</p>
+                    <p><strong>Roles:</strong> National Security Advisor (Chair), Secretary of Defense, Secretary of State, Director of National Intelligence (must explain how we missed it), Treasury Secretary.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room B: The Miracle Machine</h3>
+                    <p><strong>Who you are:</strong> The American science and technology enterprise, convened by the White House science office.</p>
+                    <p><strong>Your power:</strong> The best-funded research universities and national labs in the world, DARPA, and private aerospace companies with enormous capital.</p>
+                    <p><strong>Your weakness:</strong> You have no idea how the device works. Catching up could take years. And your launch and aerospace industries just lost a large share of their market value.</p>
+                    <p><strong>Roles:</strong> White House Science Advisor (Chair), NSF Director, DARPA Director, Director of a DOE National Lab, CEO of a U.S. launch company, a research university president.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room C: Europe, the Toulouse Council</h3>
+                    <p><strong>Who you are:</strong> The European leaders and institutions who own the secret.</p>
+                    <p><strong>Your power:</strong> For now, you are the only people on Earth who have this. Every capital wants to talk to you.</p>
+                    <p><strong>Your weakness:</strong> You are 27 countries that do not agree. You still depend on America for nuclear deterrence and much of your intelligence. And a secret this valuable will not stay secret.</p>
+                    <p><strong>Roles:</strong> President of the European Commission (Chair), French Minister of the Armed Forces, German Chancellor's security adviser, Polish Defense Minister, CEO of Aérolys, Dr. Inès Marchand (the Toulouse physicist, who wants her work published).</p>
+                </div>
+
+                <h3>Roles Inside Every Room</h3>
+                <p>Besides the character roles above, every room fills these three jobs first.</p>
+                <table>
+                    <tr><th>Job</th><th>What it involves</th></tr>
+                    <tr><td><strong>Chair</strong></td><td>Runs the clock. Forces decisions. Breaks ties.</td></tr>
+                    <tr><td><strong>Scribe</strong></td><td>Writes the five boxes in the shared doc. If it is not written, it was not decided.</td></tr>
+                    <tr><td><strong>Reporter</strong></td><td>Reads the card to the class in two minutes and answers one question.</td></tr>
+                </table>
+                <p>If your room has more people than roles, double up: two people can share a character. If it has fewer, the Chair drops roles from the bottom of the list.</p>
+            </div>
+
+            <!-- ===================== MOVE 1 ===================== -->
+            <div id="move1" class="tab-content">
+                <h2>Move 1: The First Week (17 minutes)</h2>
+
+                <div class="danger-box">
+                    <strong>MARCH 17, 2028. DAY 3.</strong> Aerospace stocks are down sharply. Cable news is running the Toulouse video on a loop. Russia's foreign ministry calls the demonstration "a direct threat." China has said nothing. Every room must fill in its Response Card before the end of the week.
+                </div>
+
+                <div class="decision-point">
+                    <h3>Your Task: Fill In All Five Boxes</h3>
+                    <ol>
+                        <li><strong>Assessment.</strong> One sentence on what this changes. Then name the one thing you don't know that you most need to.</li>
+                        <li><strong>Offense.</strong> One action.</li>
+                        <li><strong>Defense.</strong> One action.</li>
+                        <li><strong>Economics.</strong> One action.</li>
+                        <li><strong>The Ask &amp; The Red Line.</strong> One concrete request to another room, and one thing you will not do.</li>
+                    </ol>
+                </div>
+
+                <h3>What the Boxes Mean for Your Room</h3>
+                <table>
+                    <tr><th></th><th>Room A: Washington</th><th>Room B: Miracle Machine</th><th>Room C: Europe</th></tr>
+                    <tr><td><strong>Offense</strong></td><td>How does the U.S. military get this capability, or something that beats it?</td><td>What does the crash program look like? Who runs it, how much does it cost, and is it open or classified?</td><td>Deploy, demonstrate, or hold back? Where do the first 12 modules go?</td></tr>
+                    <tr><td><strong>Defense</strong></td><td>What happens to the forces already built or planned that may now be obsolete?</td><td>How do you protect U.S. researchers, labs, and the talent pipeline? (Europe is hiring.)</td><td>How do you keep the secret from Russia, China, and even America?</td></tr>
+                    <tr><td><strong>Economics</strong></td><td>Sanctions, tariffs, investment, or a deal?</td><td>What happens to U.S. launch and aerospace companies and their workers?</td><td>Sell it, license it, or keep it? At what price, and to whom?</td></tr>
+                </table>
+
+                <div class="warning-box">
+                    <strong>Suggested pace:</strong> 4 min on the Assessment, 3 min each on Offense, Defense, and Economics, 4 min on the Ask and Red Line. If you are still arguing about the Assessment at minute 6, the Chair writes one.
+                </div>
+
+                <div class="info-box">
+                    <strong>What makes a card strong:</strong> An Assessment that names a real unknown instead of pretending to certainty. Actions that fit your room's actual power. An Ask the other room might actually grant. A Red Line that costs you something to keep.
+                </div>
+
+                <h3>Report-Out 1 (2 minutes per room)</h3>
+                <p>The Reporter reads all five boxes. The instructor asks <strong>one</strong> question. Listen carefully to the other rooms' Asks: some of them are aimed at you. After all three rooms report, <strong>the instructor announces which Asks were granted, refused, or ignored</strong>. That ruling is part of the situation for Move 2.</p>
+            </div>
+
+            <!-- ===================== MOVE 2 ===================== -->
+            <div id="move2" class="tab-content">
+                <h2>Move 2: Day 90, The Secret Gets Out (12 minutes)</h2>
+
+                <div class="danger-box">
+                    <strong>JUNE 12, 2028. DAY 90.</strong> Three months have passed. Your Move 1 decisions have played out as the instructor ruled.
+                </div>
+
+                <h3>Every Room Receives This</h3>
+                <div class="classified-box">
+                    <strong>BEIJING HAS ONE.</strong> China's state television shows a Lift Module raising a container of cargo off a ship in the South China Sea. Western intelligence agencies split: some believe China stole the design from a European supplier; others believe Chinese scientists worked it out independently from the original withdrawn paper, which had circulated as a preprint for eleven days before it was pulled. <strong>Either way, Europe's monopoly is over, and the country America worries about most now has the capability.</strong>
+                </div>
+
+                <h3>Your Room Also Receives One of These</h3>
+
+                <div class="role-card">
+                    <h3>Room A (Washington): The Obsolescence Bill</h3>
+                    <p>The Joint Chiefs report that roughly a third of planned defense spending over the next decade assumes heavy things must fly fast or move on the ground. Congress demands to know what gets cancelled. Meanwhile, Taiwan and Japan are asking Washington, not Brussels, what America will do about a China that can lift armor across the Strait without ships.</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room B (Miracle Machine): The Brain Drain</h3>
+                    <p>Aérolys and three European universities have hired 60 of America's top condensed-matter physicists at double their salaries. A DOE national lab has produced a weak replica that lifts 200 kilograms. It says it can build a full version in three years with $40 billion. A Nobel laureate testifies that the money would be better spent on broad basic research, because "the next Toulouse will not come from the field you are funding."</p>
+                </div>
+
+                <div class="role-card">
+                    <h3>Room C (Europe): The Council Splits</h3>
+                    <p>France wants to keep the technology sovereign and European. Germany wants to license it to rebuild its industry. Poland and the Baltic states want modules deployed on the Russian border now, before Moscow gets one too. Washington is hinting that U.S. security guarantees depend on sharing. And Dr. Marchand has threatened to publish everything, arguing that secrecy just failed and only openness can keep the West ahead.</p>
+                </div>
+
+                <div class="decision-point">
+                    <h3>Your Task</h3>
+                    <ol>
+                        <li><strong>Keep, Bend, or Break?</strong> Does your Move 1 card survive as written, survive with changes, or need to be thrown out?</li>
+                        <li><strong>Change exactly ONE box.</strong> You may rewrite only one of the five boxes. Which one failed first?</li>
+                        <li><strong>Name the real competitor.</strong> One sentence: after Day 90, who is the most important other player for your room, and why?</li>
+                        <li><strong>The verdict.</strong> One sentence: <em>"A strategic surprise from an ally turned out to be (a gift / a threat / both) because..."</em></li>
+                    </ol>
+                </div>
+
+                <h3>Report-Out 2 (2 minutes per room)</h3>
+                <p>The Reporter states Keep, Bend, or Break, names the box you changed and why, names the real competitor, and reads the verdict.</p>
+            </div>
+
+            <!-- ===================== DEBRIEF ===================== -->
+            <div id="debrief" class="tab-content">
+                <h2>Debrief</h2>
+
+                <div class="info-box">
+                    <strong>The core question:</strong> America built its scientific system after Sputnik to make sure it would never be technologically surprised again. In this game, it was surprised anyway, by friends, using America's own model of basic research. What does that say about where scientific advantage really comes from?
+                </div>
+
+                <h3>Discussion Questions</h3>
+                <ul>
+                    <li><strong>How did we miss it?</strong> The withdrawn paper was a signal. Why do intelligence agencies watch adversaries' labs but not allies'? Should they?</li>
+                    <li><strong>Which domain mattered most?</strong> Most rooms start with offense and defense. Was the economic shock actually bigger? Which box did you change in Move 2?</li>
+                    <li><strong>Sputnik reflex.</strong> Did Room B reach for a crash program? After Sputnik, America created NASA, ARPA, and the National Defense Education Act. Is a crash program the right answer to a discovery you don't understand, or does it just fund the last war?</li>
+                    <li><strong>Secrecy vs. openness.</strong> Europe's secret lasted 90 days. Dr. Marchand says openness would have kept the West ahead. Was she right? What does this say about classifying basic science?</li>
+                    <li><strong>Ally or rival?</strong> Did Rooms A and C treat each other as partners or competitors? Did the instructor's ruling on the Asks push them together or apart? What changed when China entered?</li>
+                    <li><strong>Talent.</strong> The breakthrough scientist trained in America and left. Sixty more left in Move 2. Is the Miracle Machine's real asset its money, its institutions, or its people?</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>One-line exit ticket:</strong> If you could make one change to the American research system <em>today</em> to make a "Toulouse surprise" less likely, what would it be, and who would object?
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>The Toulouse Effect: A Strategic Surprise War Game | Fictional Scenario</p>
+            <p>Student Version</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.tab-content').forEach(function (c) { c.classList.remove('active'); });
+                document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+                document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+                btn.classList.add('active');
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
+</body>
+</html>
